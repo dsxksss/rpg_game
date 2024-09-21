@@ -1,19 +1,18 @@
 package rpg_game;
 
-public class Weapon {
-    private String name;
+public class Weapon extends Equipment {
     private Integer damage;
 
     public Weapon(String name, Integer damage) {
-        this.name = name;
+        super(name);
         this.damage = damage;
     }
 
-    public String getName(){
-        return this.name;
+    public Integer getDamage() {
+        return damage;
     }
 
-    public Integer getDamage(){
-        return this.damage;
+    public EquipmentStatus getStatus() {
+        return new EquipmentStatus(this.damage, 0, 0);
     }
 }
